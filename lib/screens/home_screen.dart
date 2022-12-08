@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:provider/provider.dart';
 import 'package:udemy/provider/dark_theme_provider.dart';
 import 'package:udemy/services/utils.dart';
@@ -40,20 +41,14 @@ class HomeScreen extends StatelessWidget {
     Color color = utils.color;
     return Scaffold(
       appBar: AppBar(
-        //left align
-        centerTitle: false,
-        elevation: 3,
-        title: TextWidget(
-            text: 'compareIt', color: color, textSize: 26, isTitle: true),
-        //backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        backgroundColor: Color.fromRGBO(255, 169, 106, 1),
+        elevation: 0,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       ),
       body: Column(
         children: [
           //search
           Padding(
-            padding:
-                const EdgeInsets.only(top: 50, left: 8, right: 8, bottom: 0),
+            padding: const EdgeInsets.only(left: 8, right: 8),
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
@@ -79,10 +74,10 @@ class HomeScreen extends StatelessWidget {
 
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.only(left: 8, right: 8, top: 10),
+              padding: const EdgeInsets.only(left: 8, right: 8),
               child: GridView.count(
                 //prevent scrolling
-                physics: const NeverScrollableScrollPhysics(),
+                //physics: const NeverScrollableScrollPhysics(),
                 crossAxisCount: 2,
                 childAspectRatio: 240 / 250,
                 crossAxisSpacing: 20,
