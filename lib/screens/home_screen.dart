@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
     Color.fromARGB(255, 222, 118, 92),
     Color.fromARGB(255, 173, 218, 241),
     Color.fromARGB(255, 0, 62, 23),
-    Color.fromARGB(255, 3, 235, 208),
+    Color.fromARGB(255, 13, 5, 59),
   ];
 
   List<Map<String, dynamic>> storeInfo = [
@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
       'catText': 'Food Lovers',
     },
     {
-      'imgPath': 'assets/images/checkers.jpeg',
+      'imgPath': 'assets/images/checkers.png',
       'catText': 'Checkers',
     },
   ];
@@ -53,7 +53,7 @@ class HomeScreen extends StatelessWidget {
           //search
           Padding(
             padding:
-                const EdgeInsets.only(top: 50, left: 8, right: 8, bottom: 40),
+                const EdgeInsets.only(top: 50, left: 8, right: 8, bottom: 0),
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
@@ -79,8 +79,9 @@ class HomeScreen extends StatelessWidget {
 
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(left: 8, right: 8, top: 10),
               child: GridView.count(
+                //prevent scrolling
                 physics: const NeverScrollableScrollPhysics(),
                 crossAxisCount: 2,
                 childAspectRatio: 240 / 250,
