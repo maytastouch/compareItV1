@@ -50,20 +50,33 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Container(
-            padding: EdgeInsets.all(8),
-            child: Padding(
-              padding: const EdgeInsets.only(top: 50, bottom: 20),
-              //left align
-
-              child: Text(
-                'Stores',
-                style: TextStyle(
-                    color: color, fontSize: 18, fontWeight: FontWeight.bold),
-                textAlign: TextAlign.left,
+          //search
+          Padding(
+            padding:
+                const EdgeInsets.only(top: 50, left: 8, right: 8, bottom: 40),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(
+                  color: Colors.grey,
+                  width: 2,
+                ),
+              ),
+              child: TextField(
+                // ignore: prefer_const_constructors
+                decoration: InputDecoration(
+                    hintText: 'Search Item',
+                    border: InputBorder.none,
+                    hintStyle: TextStyle(color: color),
+                    contentPadding: const EdgeInsets.all(24)),
+                //textInputAction: TextInputAction.search,
+                onSubmitted: (query) {
+                  // Perform the search using the `query` string
+                },
               ),
             ),
           ),
+
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
