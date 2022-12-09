@@ -81,7 +81,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-
+//card slider
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: SizedBox(
