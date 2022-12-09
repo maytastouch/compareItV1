@@ -1,3 +1,4 @@
+import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:provider/provider.dart';
@@ -9,6 +10,12 @@ import 'package:udemy/widgets/text_widget.dart';
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
 
+  final List<String> _offerImages = [
+    'assets/images/offers/Offer1.jpeg',
+    'assets/images/offers/Offer2.jpeg',
+    'assets/images/offers/Offer3.jpeg',
+    'assets/images/offers/Offer4.jpeg'
+  ];
   List<Color> gridColors = [
     Color.fromARGB(255, 222, 118, 92),
     Color.fromARGB(255, 173, 218, 241),
@@ -38,7 +45,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final utils = Utils(context);
+    final themeState = utils.getTheme;
+    Size size = Utils(context).getScreenSize;
     Color color = utils.color;
+
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -68,6 +78,29 @@ class HomeScreen extends StatelessWidget {
                 onSubmitted: (query) {
                   // Perform the search using the `query` string
                 },
+              ),
+            ),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SizedBox(
+              height: size.height * 0.33,
+              child: Swiper(
+                itemBuilder: (BuildContext context, int index) {
+                  return Image.asset(
+                    _offerImages[index],
+                    fit: BoxFit.fill,
+                  );
+                },
+                autoplay: true,
+                itemCount: _offerImages.length,
+                pagination: const SwiperPagination(
+                    alignment: Alignment.bottomCenter,
+                    builder: DotSwiperPaginationBuilder(
+                        color: Colors.white,
+                        activeColor: Color.fromRGBO(255, 169, 106, 1))),
+                //control: const  SwiperControl(color: Colors.black),
               ),
             ),
           ),

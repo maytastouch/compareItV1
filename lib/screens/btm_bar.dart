@@ -21,7 +21,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
 
   final List _pages = [
     HomeScreen(),
-    const FavoriteScreen(),
+    FavoriteScreen(),
     const CartScreen(),
     const UserScreen(),
   ];
