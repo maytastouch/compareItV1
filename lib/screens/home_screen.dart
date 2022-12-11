@@ -2,7 +2,7 @@ import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:provider/provider.dart';
-import 'package:udemy/provider/dark_theme_provider.dart';
+
 import 'package:udemy/services/utils.dart';
 import 'package:udemy/widgets/categories_widget.dart';
 import 'package:udemy/widgets/text_widget.dart';
@@ -46,75 +46,86 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final utils = Utils(context);
     final themeState = utils.getTheme;
+
     Size size = Utils(context).getScreenSize;
     Color color = utils.color;
 
+    // ignore: unused_local_variable
+
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      ),
-      body: Column(
-        children: [
-          //search
-          Padding(
-            padding: const EdgeInsets.only(left: 8, right: 8),
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(
-                  color: Colors.grey,
-                  width: 2,
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            floating: false,
+            pinned: true,
+            snap: false,
+            centerTitle: false,
+            foregroundColor: Colors.transparent,
+            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            bottom: AppBar(
+              backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+              elevation: 0,
+              title: Container(
+                //width: double.infinity,
+                height: 45,
+                decoration: BoxDecoration(
+                  // borderRadius: BorderRadius.circular(14),
+                  border: Border.all(
+                    color: Colors.grey,
+                    width: 3,
+                  ),
+                ),
+                child: const Center(
+                  child: TextField(
+                    decoration: InputDecoration(
+                        //move icon to the right
+                        prefixIcon: Icon(IconlyLight.search),
+                        //icon: Icon(IconlyLight.search),
+                        hintText: 'Search Item',
+                        border: InputBorder.none,
+                        hintStyle:
+                            TextStyle(color: Color.fromRGBO(255, 169, 106, 1)),
+                        contentPadding: const EdgeInsets.all(12)),
+                  ),
                 ),
               ),
-              child: TextField(
-                // ignore: prefer_const_constructors
-                decoration: InputDecoration(
-                    hintText: 'Search Item',
-                    border: InputBorder.none,
-                    hintStyle: TextStyle(color: color),
-                    contentPadding: const EdgeInsets.all(24)),
-                //textInputAction: TextInputAction.search,
-                onSubmitted: (query) {
-                  // Perform the search using the `query` string
-                },
-              ),
             ),
           ),
-//card slider
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: SizedBox(
-              height: size.height * 0.33,
-              child: Swiper(
-                itemBuilder: (BuildContext context, int index) {
-                  return Image.asset(
-                    _offerImages[index],
-                    fit: BoxFit.fill,
-                  );
-                },
-                autoplay: true,
-                itemCount: _offerImages.length,
-                pagination: const SwiperPagination(
-                    alignment: Alignment.bottomCenter,
-                    builder: DotSwiperPaginationBuilder(
-                        color: Colors.white,
-                        activeColor: Color.fromRGBO(255, 169, 106, 1))),
-                //control: const  SwiperControl(color: Colors.black),
+          // Other Sliver Widgets
+          SliverList(
+            delegate: SliverChildListDelegate([
+              const SizedBox(
+                height: 20,
               ),
-            ),
-          ),
-
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.only(left: 8, right: 8),
-              child: GridView.count(
-                //prevent scrolling
-                //physics: const NeverScrollableScrollPhysics(),
+              SizedBox(
+                height: size.height * 0.33,
+                child: Swiper(
+                  itemBuilder: (BuildContext context, int index) {
+                    return Image.asset(
+                      _offerImages[index],
+                      fit: BoxFit.fill,
+                    );
+                  },
+                  autoplay: true,
+                  itemCount: _offerImages.length,
+                  pagination: const SwiperPagination(
+                      alignment: Alignment.bottomCenter,
+                      builder: DotSwiperPaginationBuilder(
+                          color: Colors.white, activeColor: Colors.red)),
+                  // control: const SwiperControl(color: Colors.black),
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              GridView.count(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
                 crossAxisCount: 2,
-                childAspectRatio: 240 / 250,
+                padding: EdgeInsets.zero,
                 crossAxisSpacing: 20,
                 mainAxisSpacing: 20,
+                childAspectRatio: size.width / (size.height * 0.51),
                 children: List.generate(4, (index) {
                   return CategoriesWidget(
                     catText: storeInfo[index]['catText'],
@@ -122,8 +133,8 @@ class HomeScreen extends StatelessWidget {
                     passedColor: gridColors[index],
                   );
                 }),
-              ),
-            ),
+              )
+            ]),
           ),
         ],
       ),
