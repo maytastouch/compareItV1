@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:udemy/screens/shoprite/shoprite_categories_screen.dart';
 import 'package:udemy/widgets/text_widget.dart';
 
 import '../provider/dark_theme_provider.dart';
+import '../screens/shoprite/shoprite_categories_screen.dart';
 
-class CategoriesWidget extends StatelessWidget {
-  const CategoriesWidget(
+class HomeScreenCategoriesWidget extends StatelessWidget {
+  const HomeScreenCategoriesWidget(
       {super.key,
       required this.catText,
       required this.imgPath,
@@ -21,7 +21,10 @@ class CategoriesWidget extends StatelessWidget {
     double _screenWidth = MediaQuery.of(context).size.width;
 
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.pushNamed(context, ShopriteCategoriesScreen.routeName,
+            arguments: catText);
+      },
       child: Container(
         decoration: BoxDecoration(
           color: passedColor.withOpacity(0.1),
@@ -41,7 +44,7 @@ class CategoriesWidget extends StatelessWidget {
               ),
             ),
             TextWidget(
-                text: catText, color: color, textSize: 13, isTitle: true),
+                text: catText, color: color, textSize: 24, isTitle: true),
           ],
         ),
       ),

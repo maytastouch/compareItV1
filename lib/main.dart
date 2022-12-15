@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:udemy/screens/btm_bar.dart';
+import 'package:udemy/screens/shoprite/shoprite_categories_screen.dart';
 
 import 'consts/theme_data.dart';
 import 'provider/dark_theme_provider.dart';
@@ -52,6 +53,10 @@ class _MyAppState extends State<MyApp> {
           title: 'Flutter Demo',
           theme: Styles.themeData(themeProvider.getDarkTheme, context),
           home: const BottomBarScreen(),
+          routes: {
+            ShopriteCategoriesScreen.routeName: (ctx) =>
+                ShopriteCategoriesScreen(),
+          },
         );
       }),
     );

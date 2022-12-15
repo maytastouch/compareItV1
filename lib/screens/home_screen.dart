@@ -7,6 +7,9 @@ import 'package:udemy/services/utils.dart';
 import 'package:udemy/widgets/categories_widget.dart';
 import 'package:udemy/widgets/text_widget.dart';
 
+import '../provider/dark_theme_provider.dart';
+import '../widgets/home_screen_categories_widget.dart';
+
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
 
@@ -60,13 +63,13 @@ class HomeScreen extends StatelessWidget {
             pinned: true,
             snap: false,
             centerTitle: false,
-            foregroundColor: Colors.transparent,
+            //foregroundColor: Colors.transparent,
             backgroundColor: Theme.of(context).scaffoldBackgroundColor,
             bottom: AppBar(
               backgroundColor: Theme.of(context).scaffoldBackgroundColor,
               elevation: 0,
               title: Container(
-                //width: double.infinity,
+                width: double.infinity,
                 height: 45,
                 decoration: BoxDecoration(
                   // borderRadius: BorderRadius.circular(14),
@@ -85,7 +88,7 @@ class HomeScreen extends StatelessWidget {
                         border: InputBorder.none,
                         hintStyle:
                             TextStyle(color: Color.fromRGBO(255, 169, 106, 1)),
-                        contentPadding: const EdgeInsets.all(12)),
+                        contentPadding: EdgeInsets.all(12)),
                   ),
                 ),
               ),
@@ -109,30 +112,37 @@ class HomeScreen extends StatelessWidget {
                   autoplay: true,
                   itemCount: _offerImages.length,
                   pagination: const SwiperPagination(
-                      alignment: Alignment.bottomCenter,
-                      builder: DotSwiperPaginationBuilder(
-                          color: Colors.white, activeColor: Colors.red)),
+                    alignment: Alignment.bottomCenter,
+                    builder: DotSwiperPaginationBuilder(
+                      color: Colors.white,
+                      activeColor: Color.fromRGBO(255, 169, 106, 1),
+                    ),
+                  ),
                   // control: const SwiperControl(color: Colors.black),
                 ),
               ),
               const SizedBox(
                 height: 20,
               ),
-              GridView.count(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                crossAxisCount: 2,
-                padding: EdgeInsets.zero,
-                crossAxisSpacing: 20,
-                mainAxisSpacing: 20,
-                childAspectRatio: size.width / (size.height * 0.51),
-                children: List.generate(4, (index) {
-                  return CategoriesWidget(
-                    catText: storeInfo[index]['catText'],
-                    imgPath: storeInfo[index]['imgPath'],
-                    passedColor: gridColors[index],
-                  );
-                }),
+              Padding(
+                padding:
+                    themeState ? const EdgeInsets.all(0) : EdgeInsets.all(8.0),
+                child: GridView.count(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  crossAxisCount: 2,
+                  padding: EdgeInsets.zero,
+                  crossAxisSpacing: 20,
+                  mainAxisSpacing: 20,
+                  childAspectRatio: size.width / (size.height * 0.51),
+                  children: List.generate(4, (index) {
+                    return HomeScreenCategoriesWidget(
+                      catText: storeInfo[index]['catText'],
+                      imgPath: storeInfo[index]['imgPath'],
+                      passedColor: gridColors[index],
+                    );
+                  }),
+                ),
               )
             ]),
           ),
