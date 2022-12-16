@@ -1,3 +1,4 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:provider/provider.dart';
@@ -5,6 +6,7 @@ import 'package:udemy/screens/cart.dart';
 import 'package:udemy/screens/favorites.dart';
 import 'package:udemy/screens/home_screen.dart';
 import 'package:udemy/screens/user.dart';
+import 'package:udemy/widgets/text_widget.dart';
 
 import '../provider/dark_theme_provider.dart';
 
@@ -65,7 +67,17 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
             label: "Favorite",
           ),
           BottomNavigationBarItem(
-            icon: Icon(_selectedIndex == 2 ? IconlyBold.buy : IconlyLight.buy),
+            icon: Badge(
+                toAnimate: true,
+                shape: BadgeShape.circle,
+                badgeColor: Color.fromRGBO(255, 169, 106, 1),
+                borderRadius: BorderRadius.circular(10),
+                position: BadgePosition.topEnd(top: -7, end: -7),
+                badgeContent: FittedBox(
+                    child: TextWidget(
+                        text: '1', color: Colors.white, textSize: 14)),
+                child: Icon(
+                    _selectedIndex == 2 ? IconlyBold.buy : IconlyLight.buy)),
             label: "Cart",
           ),
           BottomNavigationBarItem(

@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:udemy/widgets/text_widget.dart';
 
 import '../provider/dark_theme_provider.dart';
+import '../screens/pay/pickNpay_categories_widget.dart';
 import '../screens/shoprite/shoprite_categories_screen.dart';
 
 class HomeScreenCategoriesWidget extends StatelessWidget {

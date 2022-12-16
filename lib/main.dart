@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:udemy/screens/btm_bar.dart';
+import 'package:udemy/screens/pay/pickNpay_categories_widget.dart';
 import 'package:udemy/screens/shoprite/shoprite_categories_screen.dart';
 
 import 'consts/theme_data.dart';
@@ -56,6 +57,8 @@ class _MyAppState extends State<MyApp> {
           routes: {
             ShopriteCategoriesScreen.routeName: (ctx) =>
                 ShopriteCategoriesScreen(),
+            PicknPayCategoriesScreen.routeName: (ctx) =>
+                PicknPayCategoriesScreen(),
           },
         );
       }),
