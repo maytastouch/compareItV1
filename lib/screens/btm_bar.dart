@@ -2,7 +2,8 @@ import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:provider/provider.dart';
-import 'package:udemy/screens/cart.dart';
+import 'package:udemy/screens/cart/cart_screen.dart';
+
 import 'package:udemy/screens/favorites.dart';
 import 'package:udemy/screens/home_screen.dart';
 import 'package:udemy/screens/user.dart';
@@ -19,7 +20,7 @@ class BottomBarScreen extends StatefulWidget {
 
 class _BottomBarScreenState extends State<BottomBarScreen> {
   //initilize index
-  int _selectedIndex = 0;
+  int _selectedIndex = 2;
 
   final List _pages = [
     HomeScreen(),

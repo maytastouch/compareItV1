@@ -109,7 +109,7 @@ class HomeScreen extends StatelessWidget {
                       fit: BoxFit.fill,
                     );
                   },
-                  autoplay: false,
+                  autoplay: true,
                   itemCount: _offerImages.length,
                   pagination: const SwiperPagination(
                     alignment: Alignment.bottomCenter,
