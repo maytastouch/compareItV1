@@ -140,6 +140,7 @@ class HomeScreen extends StatelessWidget {
                       catText: storeInfo[index]['catText'],
                       imgPath: storeInfo[index]['imgPath'],
                       passedColor: gridColors[index],
+                      index: index,
                     );
                   }),
                 ),

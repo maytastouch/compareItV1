@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:udemy/screens/checkers/checkers_categories_screen.dart';
+import 'package:udemy/screens/foodLovers/foodLover_categories_screen.dart';
 import 'package:udemy/widgets/text_widget.dart';
 
 import '../provider/dark_theme_provider.dart';
@@ -11,9 +13,11 @@ class HomeScreenCategoriesWidget extends StatelessWidget {
       {super.key,
       required this.catText,
       required this.imgPath,
-      required this.passedColor});
+      required this.passedColor,
+      required this.index});
   final String catText, imgPath;
   final Color passedColor;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +25,21 @@ class HomeScreenCategoriesWidget extends StatelessWidget {
     final Color color = themeState.getDarkTheme ? Colors.white : Colors.black;
     double _screenWidth = MediaQuery.of(context).size.width;
 
+    List<Widget> route = [
+      ShopriteCategoriesScreen(),
+      PicknPayCategoriesScreen(),
+      FoodLoversCategoriesScreen(),
+      CheckersCategoriesScreen()
+    ];
+
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(context, ShopriteCategoriesScreen.routeName,
-            arguments: catText);
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => route[index],
+          ),
+        );
       },
       child: Container(
         decoration: BoxDecoration(

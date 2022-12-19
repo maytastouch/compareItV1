@@ -1,15 +1,15 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:udemy/screens/btm_bar.dart';
 import 'package:udemy/services/utils.dart';
 
 import '../../widgets/categories_widget.dart';
 import '../../widgets/text_widget.dart';
+import '../btm_bar.dart';
 
-class ShopriteCategoriesScreen extends StatelessWidget {
-  ShopriteCategoriesScreen({super.key});
-  static const routeName = "ShopriteCategoriesScreen";
+class FoodLoversCategoriesScreen extends StatelessWidget {
+  FoodLoversCategoriesScreen({super.key});
+  static const routeName = "PicknPayCategoriesScreen";
 
   List<Color> gridColors = [
     const Color(0xff53B175),
@@ -100,7 +100,7 @@ class ShopriteCategoriesScreen extends StatelessWidget {
       'catText': 'Personal Care and Hygiene',
     },
     {
-      'imgPath': 'assets/images/pickNpay/baby4.png',
+      'imgPath': 'assets/images/cat/nuts.png',
       'catText': 'Baby',
     },
     {
@@ -145,7 +145,7 @@ class ShopriteCategoriesScreen extends StatelessWidget {
           leading: InkWell(
             borderRadius: BorderRadius.circular(20),
             onTap: () {
-              Navigator.of(context).pop();
+              Navigator.pop(context);
             },
             child: Icon(
               IconlyLight.arrowLeft2,
@@ -155,7 +155,7 @@ class ShopriteCategoriesScreen extends StatelessWidget {
           elevation: 0,
           backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           title: TextWidget(
-            text: 'Shoprite',
+            text: 'Food Lovers',
             color: color,
             textSize: 24,
             isTitle: true,

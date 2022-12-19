@@ -57,8 +57,6 @@ class _MyAppState extends State<MyApp> {
           routes: {
             ShopriteCategoriesScreen.routeName: (ctx) =>
                 ShopriteCategoriesScreen(),
-            PicknPayCategoriesScreen.routeName: (ctx) =>
-                PicknPayCategoriesScreen(),
           },
         );
       }),

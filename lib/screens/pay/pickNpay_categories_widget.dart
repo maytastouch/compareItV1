@@ -5,6 +5,7 @@ import 'package:udemy/services/utils.dart';
 
 import '../../widgets/categories_widget.dart';
 import '../../widgets/text_widget.dart';
+import '../btm_bar.dart';
 
 class PicknPayCategoriesScreen extends StatelessWidget {
   PicknPayCategoriesScreen({super.key});
