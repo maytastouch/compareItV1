@@ -2,9 +2,12 @@ import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:udemy/screens/btm_bar.dart';
+import 'package:udemy/screens/shoprite/shoprite_categories_widget.dart';
+import 'package:udemy/screens/shoprite/shoprite_feeds_screen.dart';
 import 'package:udemy/services/utils.dart';
 
 import '../../widgets/categories_widget.dart';
+
 import '../../widgets/text_widget.dart';
 
 class ShopriteCategoriesScreen extends StatelessWidget {
@@ -169,10 +172,11 @@ class ShopriteCategoriesScreen extends StatelessWidget {
             crossAxisSpacing: 20, // Vertical spacing
             mainAxisSpacing: 20, // Horizontal spacing
             children: List.generate(gridColors.length, (index) {
-              return CategoriesWidget(
+              return ShopriteCategoriesWidget(
                 catText: catInfo[index]['catText'],
                 imgPath: catInfo[index]['imgPath'],
                 passedColor: gridColors[index],
+                index: index,
               );
             }),
           ),
