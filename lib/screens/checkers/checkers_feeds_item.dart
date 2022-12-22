@@ -2,6 +2,8 @@ import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:udemy/screens/checkers/checkersProductDetails.dart';
+import 'package:udemy/services/global_methods.dart';
 import 'package:udemy/widgets/price_widget.dart';
 import 'package:udemy/widgets/text_widget.dart';
 
@@ -41,7 +43,10 @@ class _CheckersFeedsWidgetState extends State<CheckersFeedsWidget> {
         color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(12),
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            GlobalMethods.navigateTo(
+                ctx: context, routeName: CheckersProductDetails.routeName);
+          },
           borderRadius: BorderRadius.circular(12),
           child: Column(
             children: [

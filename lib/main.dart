@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:udemy/screens/btm_bar.dart';
+import 'package:udemy/screens/checkers/checkersProductDetails.dart';
+import 'package:udemy/screens/foodLovers/foodLoversProductDetails.dart';
+import 'package:udemy/screens/pay/pickNpayProductDetails.dart';
+import 'package:udemy/screens/shoprite/shopriteProductDetails.dart';
 
 import 'package:udemy/screens/shoprite/shoprite_categories_screen.dart';
 
@@ -56,6 +60,11 @@ class _MyAppState extends State<MyApp> {
           routes: {
             ShopriteCategoriesScreen.routeName: (ctx) =>
                 ShopriteCategoriesScreen(),
+            ShopriteProductDetails.routeName: (ctx) => ShopriteProductDetails(),
+            PicknPayProductDetails.routeName: (ctx) => PicknPayProductDetails(),
+            FoodLoversProductDetails.routeName: (ctx) =>
+                FoodLoversProductDetails(),
+            CheckersProductDetails.routeName: (ctx) => CheckersProductDetails(),
           },
         );
       }),

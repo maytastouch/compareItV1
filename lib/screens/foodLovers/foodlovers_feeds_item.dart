@@ -2,11 +2,13 @@ import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:udemy/services/global_methods.dart';
 import 'package:udemy/widgets/price_widget.dart';
 import 'package:udemy/widgets/text_widget.dart';
 
 import '../../services/utils.dart';
 import '../../widgets/heart_btn.dart';
+import 'foodLoversProductDetails.dart';
 
 class FoodLoversFeedsWidget extends StatefulWidget {
   const FoodLoversFeedsWidget({super.key});
@@ -41,7 +43,10 @@ class _FoodLoversFeedsWidgetState extends State<FoodLoversFeedsWidget> {
         color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(12),
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            GlobalMethods.navigateTo(
+                ctx: context, routeName: FoodLoversProductDetails.routeName);
+          },
           borderRadius: BorderRadius.circular(12),
           child: Column(
             children: [
