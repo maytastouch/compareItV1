@@ -117,7 +117,7 @@ class _CheckersFeedsScreenState extends State<CheckersFeedsScreen> {
                 physics: NeverScrollableScrollPhysics(),
                 crossAxisCount: 2,
                 //crossAxisSpacing: 10,
-                childAspectRatio: size.width / (size.height * 0.55),
+                childAspectRatio: size.width / (size.height * 0.65),
                 children: List.generate(10, (index) {
                   return CheckersFeedsWidget();
                 }),
