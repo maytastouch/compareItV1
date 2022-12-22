@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:udemy/screens/shoprite/shoprite_categories_screen.dart';
+
 import 'package:udemy/widgets/text_widget.dart';
 
 import '../provider/dark_theme_provider.dart';
@@ -40,8 +40,11 @@ class CategoriesWidget extends StatelessWidget {
                 ),
               ),
             ),
-            TextWidget(
-                text: catText, color: color, textSize: 13, isTitle: true),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: TextWidget(
+                  text: catText, color: color, textSize: 13, isTitle: true),
+            ),
           ],
         ),
       ),

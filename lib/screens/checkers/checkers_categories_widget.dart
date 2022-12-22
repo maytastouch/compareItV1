@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:udemy/screens/pay/feedsScreen/pickNpay_feeds_screen.dart';
 
 import 'package:udemy/widgets/text_widget.dart';
 
 import '../../provider/dark_theme_provider.dart';
+import 'feedsScreen/checkers_feeds_screen.dart';
 
-class PicknPayCategoriesWidget extends StatelessWidget {
-  const PicknPayCategoriesWidget({
+class CheckersCategoriesWidget extends StatelessWidget {
+  const CheckersCategoriesWidget({
     super.key,
     required this.catText,
     required this.imgPath,
@@ -25,30 +25,30 @@ class PicknPayCategoriesWidget extends StatelessWidget {
     double _screenWidth = MediaQuery.of(context).size.width;
 
     List<Widget> route = [
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
+      const CheckersFeedsScreen(),
+      const CheckersFeedsScreen(),
+      const CheckersFeedsScreen(),
+      const CheckersFeedsScreen(),
+      const CheckersFeedsScreen(),
+      const CheckersFeedsScreen(),
+      const CheckersFeedsScreen(),
+      const CheckersFeedsScreen(),
+      const CheckersFeedsScreen(),
+      const CheckersFeedsScreen(),
+      const CheckersFeedsScreen(),
+      const CheckersFeedsScreen(),
+      const CheckersFeedsScreen(),
+      const CheckersFeedsScreen(),
+      const CheckersFeedsScreen(),
+      const CheckersFeedsScreen(),
+      const CheckersFeedsScreen(),
+      const CheckersFeedsScreen(),
+      const CheckersFeedsScreen(),
+      const CheckersFeedsScreen(),
+      const CheckersFeedsScreen(),
+      const CheckersFeedsScreen(),
+      const CheckersFeedsScreen(),
+      const CheckersFeedsScreen(),
     ];
 
     return InkWell(

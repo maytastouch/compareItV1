@@ -1,6 +1,7 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:udemy/screens/foodLovers/foodlovers_categories_widget.dart';
 import 'package:udemy/services/utils.dart';
 
 import '../../widgets/categories_widget.dart';
@@ -169,10 +170,11 @@ class FoodLoversCategoriesScreen extends StatelessWidget {
             crossAxisSpacing: 20, // Vertical spacing
             mainAxisSpacing: 20, // Horizontal spacing
             children: List.generate(gridColors.length, (index) {
-              return CategoriesWidget(
+              return FoodLoversCategoriesWidget(
                 catText: catInfo[index]['catText'],
                 imgPath: catInfo[index]['imgPath'],
                 passedColor: gridColors[index],
+                index: index,
               );
             }),
           ),

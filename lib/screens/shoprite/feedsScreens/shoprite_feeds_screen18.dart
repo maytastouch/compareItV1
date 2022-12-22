@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:udemy/screens/shoprite/shoprite_feeds_item.dart';
 
-import '../../appColors/colors.dart';
-import '../../services/utils.dart';
-import '../../widgets/feeds_item.dart';
-import '../../widgets/text_widget.dart';
+import '../../../appColors/colors.dart';
+import '../../../services/utils.dart';
 
-class ShopriteFeedsScreen extends StatefulWidget {
+import '../../../widgets/text_widget.dart';
+
+class ShopriteFeedsScreen18 extends StatefulWidget {
   static const routeName = "/FeedsScreenState";
 
-  const ShopriteFeedsScreen({super.key});
+  const ShopriteFeedsScreen18({super.key});
 
   @override
-  State<ShopriteFeedsScreen> createState() => _ShopriteFeedsScreenState();
+  State<ShopriteFeedsScreen18> createState() => _ShopriteFeedsScreenState();
 }
 
-class _ShopriteFeedsScreenState extends State<ShopriteFeedsScreen> {
+class _ShopriteFeedsScreenState extends State<ShopriteFeedsScreen18> {
   final TextEditingController _searchController = TextEditingController();
   final FocusNode _searchTextFocusNode = FocusNode();
 
@@ -35,7 +36,7 @@ class _ShopriteFeedsScreenState extends State<ShopriteFeedsScreen> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         title: TextWidget(
-          text: 'Product Name',
+          text: 'Home and Outdoor',
           color: color,
           textSize: 20,
           isTitle: true,
@@ -117,7 +118,7 @@ class _ShopriteFeedsScreenState extends State<ShopriteFeedsScreen> {
                 //crossAxisSpacing: 10,
                 childAspectRatio: size.width / (size.height * 0.55),
                 children: List.generate(10, (index) {
-                  return FeedsWidget();
+                  return ShopriteFeedsWidget();
                 }),
               ),
             ),
@@ -127,3 +128,5 @@ class _ShopriteFeedsScreenState extends State<ShopriteFeedsScreen> {
     );
   }
 }
+
+//shoprite_feeds_screen13.dart

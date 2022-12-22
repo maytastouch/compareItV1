@@ -5,17 +5,17 @@ import 'package:flutter/services.dart';
 import 'package:udemy/widgets/price_widget.dart';
 import 'package:udemy/widgets/text_widget.dart';
 
-import '../services/utils.dart';
-import 'heart_btn.dart';
+import '../../services/utils.dart';
+import '../../widgets/heart_btn.dart';
 
-class FeedsWidget extends StatefulWidget {
-  const FeedsWidget({super.key});
+class FoodLoversFeedsWidget extends StatefulWidget {
+  const FoodLoversFeedsWidget({super.key});
 
   @override
-  State<FeedsWidget> createState() => _FeedsWidgetState();
+  State<FoodLoversFeedsWidget> createState() => _FoodLoversFeedsWidgetState();
 }
 
-class _FeedsWidgetState extends State<FeedsWidget> {
+class _FoodLoversFeedsWidgetState extends State<FoodLoversFeedsWidget> {
   final _quantityTextController = TextEditingController();
 
   @override
@@ -134,8 +134,8 @@ class _FeedsWidgetState extends State<FeedsWidget> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: TextWidget(
-                      text: 'Shoprite ',
-                      color: Colors.red,
+                      text: 'FoodLovers',
+                      color: Color.fromARGB(255, 11, 99, 14),
                       textSize: 14,
                       isTitle: true,
                     ),

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:udemy/screens/pay/feedsScreen/pickNpay_feeds_screen.dart';
+import 'package:udemy/screens/foodLovers/feedsScreens/foodlovers_feeds_screen.dart';
 
 import 'package:udemy/widgets/text_widget.dart';
 
 import '../../provider/dark_theme_provider.dart';
 
-class PicknPayCategoriesWidget extends StatelessWidget {
-  const PicknPayCategoriesWidget({
+class FoodLoversCategoriesWidget extends StatelessWidget {
+  const FoodLoversCategoriesWidget({
     super.key,
     required this.catText,
     required this.imgPath,
@@ -17,7 +17,7 @@ class PicknPayCategoriesWidget extends StatelessWidget {
   final String catText, imgPath;
   final Color passedColor;
   final int index;
-
+  static const marketName = "Shoprite";
   @override
   Widget build(BuildContext context) {
     final themeState = Provider.of<DarkThemeProvider>(context);
@@ -25,30 +25,30 @@ class PicknPayCategoriesWidget extends StatelessWidget {
     double _screenWidth = MediaQuery.of(context).size.width;
 
     List<Widget> route = [
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
-      const PicknPayFeedsScreen(),
+      const FoodLoversFeedsScreen(),
+      const FoodLoversFeedsScreen(),
+      const FoodLoversFeedsScreen(),
+      const FoodLoversFeedsScreen(),
+      const FoodLoversFeedsScreen(),
+      const FoodLoversFeedsScreen(),
+      const FoodLoversFeedsScreen(),
+      const FoodLoversFeedsScreen(),
+      const FoodLoversFeedsScreen(),
+      const FoodLoversFeedsScreen(),
+      const FoodLoversFeedsScreen(),
+      const FoodLoversFeedsScreen(),
+      const FoodLoversFeedsScreen(),
+      const FoodLoversFeedsScreen(),
+      const FoodLoversFeedsScreen(),
+      const FoodLoversFeedsScreen(),
+      const FoodLoversFeedsScreen(),
+      const FoodLoversFeedsScreen(),
+      const FoodLoversFeedsScreen(),
+      const FoodLoversFeedsScreen(),
+      const FoodLoversFeedsScreen(),
+      const FoodLoversFeedsScreen(),
+      const FoodLoversFeedsScreen(),
+      const FoodLoversFeedsScreen()
     ];
 
     return InkWell(

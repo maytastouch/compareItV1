@@ -164,22 +164,25 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(
                   height: 6,
                 ),
-                GridView.count(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    crossAxisCount: 2,
-                    padding: EdgeInsets.zero,
-                    crossAxisSpacing: 20,
-                    mainAxisSpacing: 20,
-                    childAspectRatio: size.width / (size.height * 0.51),
-                    children: List.generate(4, (index) {
-                      return HomeScreenCategoriesWidget(
-                        catText: storeInfo[index]['catText'],
-                        imgPath: storeInfo[index]['imgPath'],
-                        passedColor: gridColors[index],
-                        index: index,
-                      );
-                    }))
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: GridView.count(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      crossAxisCount: 2,
+                      padding: EdgeInsets.zero,
+                      crossAxisSpacing: 20,
+                      mainAxisSpacing: 20,
+                      childAspectRatio: size.width / (size.height * 0.51),
+                      children: List.generate(4, (index) {
+                        return HomeScreenCategoriesWidget(
+                          catText: storeInfo[index]['catText'],
+                          imgPath: storeInfo[index]['imgPath'],
+                          passedColor: gridColors[index],
+                          index: index,
+                        );
+                      })),
+                )
               ],
             ))
           ],
