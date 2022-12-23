@@ -51,7 +51,7 @@ class ShopriteCategoriesScreen extends StatelessWidget {
       'catText': 'Fresh Fruits',
     },
     {
-      'imgPath': 'assets/images/cat/Spinach.png',
+      'imgPath': 'assets/images/shoprite/bakery2.png',
       'catText': 'Bakery',
     },
     {
@@ -87,7 +87,7 @@ class ShopriteCategoriesScreen extends StatelessWidget {
       'catText': 'Snack Cupboard',
     },
     {
-      'imgPath': 'assets/images/cat/grains.png',
+      'imgPath': 'assets/images/shoprite/beer1.png',
       'catText': 'Beer, Cider and Seltzer',
     },
     {
@@ -103,7 +103,7 @@ class ShopriteCategoriesScreen extends StatelessWidget {
       'catText': 'Personal Care and Hygiene',
     },
     {
-      'imgPath': 'assets/images/pickNpay/baby4.png',
+      'imgPath': 'assets/images/shoprite/baby3.png',
       'catText': 'Baby',
     },
     {

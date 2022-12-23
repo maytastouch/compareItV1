@@ -47,7 +47,7 @@ class PicknPayCategoriesScreen extends StatelessWidget {
       'catText': 'Fresh Fruits',
     },
     {
-      'imgPath': 'assets/images/cat/Spinach.png',
+      'imgPath': 'assets/images/pickNpay/bakery3.png',
       'catText': 'Bakery',
     },
     {
@@ -83,7 +83,7 @@ class PicknPayCategoriesScreen extends StatelessWidget {
       'catText': 'Snack Cupboard',
     },
     {
-      'imgPath': 'assets/images/cat/grains.png',
+      'imgPath': 'assets/images/pickNpay/beer2.png',
       'catText': 'Beer, Cider and Seltzer',
     },
     {
@@ -99,7 +99,7 @@ class PicknPayCategoriesScreen extends StatelessWidget {
       'catText': 'Personal Care and Hygiene',
     },
     {
-      'imgPath': 'assets/images/cat/nuts.png',
+      'imgPath': 'assets/images/pickNpay/baby1.png',
       'catText': 'Baby',
     },
     {
